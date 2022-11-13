@@ -8,7 +8,7 @@ grubprotect() {
 
       if [ $listo1 == S ]
       then
-            echo -e "\n \e[43mIntroduce la contraseña para encriptarla\e[43m \n"
+            echo -e "\n Introduce la contraseña para encriptarla\n"
             grub-mkpasswd-pbkdf2
             read -r -p "Copia aqui contraseña encriptada desde grub.pbkdf2.sha512 hasta el final  :" passgrub
             read -r -p "Nombre de usuario para el Grub: "  usergrub
@@ -26,11 +26,11 @@ password-pbkdf2 $usergrub $passgrub" >> /etc/grub.d/40_custom
              #Actualizamos grub
              update-grub2
 
-             echo -e "\n \e[32m Tu GRUB ahora está protegido con usuario y contraseña. \e[32m \n "
+             echo -e "\n Tu GRUB ahora está protegido con usuario y contraseña. \n "
 
        else
 
-             echo -e "\n \e[31m Como te hagan una redada te vas a acordar de esta opción. \e[31m \n "
+             echo -e "\n No se ha protegido el GRUB. \n "
        fi
 }
 
@@ -46,11 +46,11 @@ friendreco() {
             apt purge friendly-recovery
             update-grub
 
-            echo -e "\n \e[32m Se ha desinstalado Friendly Recovery. \e[32m \n "
+            echo -e "\n Se ha desinstalado Friendly Recovery. \n "
 
       else
 
-            echo -e "\n \e[31m No se ha desinstalado Friendly Recovery. \e[31m \n "
+            echo -e "\n No se ha desinstalado Friendly Recovery. \n "
 
       fi
 }
@@ -74,11 +74,11 @@ instaselinux() {
             #Cambiando modo de SELinux
             perl -pi -e 's/permissive/enforcing/g' /etc/selinux/config
 
-            echo -e "\n \e[32m AppArmor ha sido deshabilitado y se ha activado la protección de SELinux en modo Enforcing. \e[32m \n "
+            echo -e "\n AppArmor ha sido deshabilitado y se ha activado la protección de SELinux en modo Enforcing. \n "
 
        else
 
-            echo -e "\n \e[31m No se ha instalado SELinux. \e[31m \n "
+            echo -e "\n No se ha instalado SELinux. \n "
 
        fi
 }
@@ -95,11 +95,11 @@ cortafuegos() {
              #Activando el cortafuegos
              ufw enable
 
-             echo -e "\n \e[32m Entorno gráfico del cortafuegos instalado. \e[32m \n "
+             echo -e "\n Entorno gráfico del cortafuegos instalado. \n "
 
         else
 
-           echo -e "\n \e[31m No se ha instalado la GUI del cortafuegos. \e[31m \n "
+           echo -e "\n No se ha instalado la GUI del cortafuegos. \n "
 
         fi
 }
@@ -139,11 +139,11 @@ instaclamav() {
 
            #Añadimos al Cron la regla de que se realice un análisis de todo el sistema cada día
 
-           echo -e "\n \e[32m Se ha instalado y configurado ClamAV como antimalware \e[32m \n "
+           echo -e "\n Se ha instalado y configurado ClamAV como antimalware \n "
 
         else
 
-           echo -e "\n \e[31m No se ha instalado ClamAV. \e[31m \n "
+           echo -e "\n No se ha instalado ClamAV. \n "
 
         fi
 }
@@ -172,11 +172,11 @@ instarkhunter() {
 
              rkhunter --update
 
-             echo -e "\n \e[32m Se ha instalado y configurado RKHUnter para buscar rootkits. \e[32m \n "
+             echo -e "\n Se ha instalado y configurado RKHUnter para buscar rootkits. \n "
 
          else
 
-             echo -e "\n \e[31m No se ha instalado RKHunter. \e[31m \n "
+             echo -e "\n No se ha instalado RKHunter. \n "
          fi
 
 }
@@ -196,10 +196,10 @@ instachkrootkit() {
 
             chkrootkit
 
-            echo -e "\n \e[32m Se ha instalado y configurado chkrootkit para buscar rootkits y malware. \e[32m \n "
+            echo -e "\n Se ha instalado y configurado chkrootkit para buscar rootkits y malware. \n "
        else
 
-            echo -e "\n \e[31m No se ha instalado chkrootkit. \e[31m \n "
+            echo -e "\n No se ha instalado chkrootkit. \n "
 
        fi
 }
@@ -213,9 +213,9 @@ puertoimpresion() {
        then
             #Desactivando servicio de impresion que deja el puerto 631 abierto.
             ufw deny 631
-            echo -e "\n \e[32m Se ha desactivado el puerto de impresión. \e[32m \n "
+            echo -e "\n Se ha desactivado el puerto de impresión. \n "
        else
-            echo -e "\n \e[31m No se ha desactivado el puerto de impresión \e[31m \n "
+            echo -e "\n No se ha desactivado el puerto de impresión.  \n "
 
        fi
 }
@@ -242,11 +242,11 @@ net.ipv4.icmp_ignore_bogus_error_messages=1
 # Make sure spoofed packets get logged
 net.ipv4.conf.all.log_martians = 1" >> /etc/sysctl.conf
 
-             echo -e "\n \e[32m Se ha protegido el kernel. \e[32m \n "
+             echo -e "\n Se ha protegido el kernel. \n "
 
         else
 
-             echo -e "\n \e[31m No se ha protegido el Kernel \e[31m \n "
+             echo -e "\n No se ha protegido el Kernel. \n "
         fi
 }
 
@@ -262,10 +262,10 @@ ipv6desactivacion() {
              sysctl -w net.ipv6.conf.all.disable_ipv6=1
              sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
-             echo -e "\n \e[32m Se ha desactivado IPV6 para mayor seguridad \e[32m \n "
+             echo -e "\n Se ha desactivado IPV6 para mayor seguridad. \n "
         else
 
-             echo -e "\n \e[31m No se ha desactivado IPV6 \e[31m \n"
+             echo -e "\n No se ha desactivado IPV6. \n"
         fi
 }
 
@@ -297,11 +297,11 @@ sdintrusos() {
              time_out=10
 
 
-             echo -e "\n \e[32m Se ha instalado un sistema de detección de intrusos. \e[32m \n "
+             echo -e "\n Se ha instalado un sistema de detección de intrusos. \n "
 
         else
 
-             echo -e "\n \e[31m No se ha instalado un sistema de detección de intrusos \e[31m \n "
+             echo -e "\n No se ha instalado un sistema de detección de intrusos \n "
         fi
 }
 
@@ -316,17 +316,17 @@ monitoreo() {
               #Instalando LNAV para monitorear los logs
 
               apt-get install lnav
-              echo -e "\n \e[32m Se ha instalado LNAV para monitorear logs. \e[32m \n "
+              echo -e "\n Se ha instalado LNAV para monitorear logs. \n "
 
         else
 
-              echo -e "\n \e[31m No se ha instalado LNAV. \e[31m \n "
+              echo -e "\n No se ha instalado LNAV. \n "
         fi
 }
 
 despedida() {
 
-              echo -e "\n \e[32m Enhorabuena, tu linux ahora está securizado. \e[32m \n "
+              echo -e "\n \Enhorabuena, tu linux ahora está securizado. \n "
               echo -e "\n \e[31m AVISO: Esto no garantiza nada pero complica las cosas a un atacante. \e[31m \n "
 
               echo -e "\n \e[1m \e[34m [*] ES NECESARIO REINICIAR EL PC PARA APLICAR LOS CAMBIOS \e[34m \e[1m \n "
