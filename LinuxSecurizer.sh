@@ -332,7 +332,7 @@ despedida() {
               echo -e "\n \e[1m \e[34m [*] ES NECESARIO REINICIAR EL PC PARA APLICAR LOS CAMBIOS \e[34m \e[1m \n "
 }
 
-    read -p "¿Estas listo para comenzar?: ( S or N )  " m
+    read -p "¿Estas listo para securizar tu Linux?: ( S or N )  " m
     if [ $m == S ]
 
     then
