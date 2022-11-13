@@ -10,7 +10,7 @@ Dar permisos de root con sudo chmod +x [script] y ejecutar.
 
 -Elimina Friendly Recovery.
 
--Cambia AppArmos por SELinux y lo activa en modo enforcing.
+-Cambia AppArmor por SELinux y lo activa en modo enforcing.
 
 -Instala la interfaz gráfica del cortafuegos UFW.
 
