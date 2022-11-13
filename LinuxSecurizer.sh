@@ -4,9 +4,9 @@
 #PROTEGIENDO EL GRUB
 grubprotect() {
 
-      read -p "Deseas proteger el GRUB?: (S or N) " listo1
+      read -p "Deseas proteger el GRUB?: (S or N) " a
 
-      if [ $listo1 == S ]
+      if [ $a == S ]
       then
             echo -e "\n Introduce la contraseña para encriptarla\n"
             grub-mkpasswd-pbkdf2
@@ -36,9 +36,9 @@ password-pbkdf2 $usergrub $passgrub" >> /etc/grub.d/40_custom
 
 friendreco() {
 
-      read -p "¿Quieres eliminar el Friendly Recovery?:  (S or N): " listo2
+      read -p "¿Quieres eliminar el Friendly Recovery?:  (S or N): " b
 
-      if [ $listo2 == S ]
+      if [ $b == S ]
 
       then
 
@@ -57,9 +57,9 @@ friendreco() {
 
 instaselinux() {
 
-       read -p "¿Quieres sutituir Apparmor por SELinux? (S or N): " listo3
+       read -p "¿Quieres sutituir Apparmor por SELinux? (S or N): " c
 
-       if [ $listo3 == S ]
+       if [ $c == S ]
 
        then
             #Detener Apparmor para sustituirlo por SELinux
@@ -85,9 +85,9 @@ instaselinux() {
 
 cortafuegos() {
 
-        read -p "¿Quieres instalar el entorno gráfico del cortafuegos? (S or N): " listo4
+        read -p "¿Quieres instalar el entorno gráfico del cortafuegos? (S or N): " d
 
-        if [ $listo4 == S ]
+        if [ $d == S ]
 
         then
              #Instalando entorno grafico del cortafuegos
@@ -106,9 +106,9 @@ cortafuegos() {
 
 instaclamav() {
 
-       read -p "¿Quieres instalar CalmAv como antimalware? (S or N): " listo5
+       read -p "¿Quieres instalar CalmAv como antimalware? (S or N): " e
 
-       if [ $listo5 == S ]
+       if [ $e == S ]
 
        then
 
@@ -150,9 +150,9 @@ instaclamav() {
 
 instarkhunter() {
 
-        read -p "¿Quieres instalar RKHunter para buscar rootkits? (S or N): " listo6
+        read -p "¿Quieres instalar RKHunter para buscar rootkits? (S or N): " f
 
-        if [ $listo6 == S ]
+        if [ $f == S ]
 
         then
              #Instalando RKHunter para buscar rootkits
@@ -183,9 +183,9 @@ instarkhunter() {
 
 instachkrootkit() {
 
-       read -p "¿Quieres instalar chkrootkit? (S or N): " listo7
+       read -p "¿Quieres instalar chkrootkit? (S or N): " g
 
-       if [ $listo7 == S ]
+       if [ $g == S ]
 
        then
             #Instalando chkrootkit
@@ -206,9 +206,9 @@ instachkrootkit() {
 
 puertoimpresion() {
 
-       read -p "¿Deseas desactivar el puerto 631 para imprimir? (S or N): " listo8
+       read -p "¿Deseas desactivar el puerto 631 para imprimir? (S or N): " h
 
-       if [ $listo8 == S ]
+       if [ $h == S ]
 
        then
             #Desactivando servicio de impresion que deja el puerto 631 abierto.
@@ -222,9 +222,9 @@ puertoimpresion() {
 
 kernelproteccion() {
 
-       read -p "¿Deseas proteger el Kernel? (S or N): " listo9
+       read -p "¿Deseas proteger el Kernel? (S or N): " i
 
-       if [ $listo9 == S ]
+       if [ $i == S ]
 
        then
 
@@ -251,9 +251,9 @@ net.ipv4.conf.all.log_martians = 1" >> /etc/sysctl.conf
 }
 
 ipv6desactivacion() {
-        read -p "¿Deseas desactivar IPV6? (S or N): " listo10
+        read -p "¿Deseas desactivar IPV6? (S or N): " j
 
-        if [ $listo10 == S ]
+        if [ $j == S ]
 
         then
 
@@ -271,9 +271,9 @@ ipv6desactivacion() {
 
 sdintrusos() {
 
-        read -p "¿Deseas instalar un sistema de detección de intrusos? (S or N): " listo11
+        read -p "¿Deseas instalar un sistema de detección de intrusos? (S or N): " k
 
-        if [ $listo11 == S ]
+        if [ $k == S ]
 
         then
 
@@ -307,9 +307,9 @@ sdintrusos() {
 
 monitoreo() {
 
-        read -p "¿Deseas instalar lnav para monitorear los logs? (S or N): " listo12
+        read -p "¿Deseas instalar lnav para monitorear los logs? (S or N): " l
 
-        if [ $listo12 == S ]
+        if [ $l == S ]
 
         then
 
@@ -332,8 +332,8 @@ despedida() {
               echo -e "\n \e[1m \e[34m [*] ES NECESARIO REINICIAR EL PC PARA APLICAR LOS CAMBIOS \e[34m \e[1m \n "
 }
 
-    read -p "¿Estas listo para comenzar?: ( S or N )  " listo
-    if [ $listo == S ]
+    read -p "¿Estas listo para comenzar?: ( S or N )  " m
+    if [ $m == S ]
 
     then
 
