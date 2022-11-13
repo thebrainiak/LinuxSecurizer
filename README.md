@@ -18,6 +18,8 @@ Dar permisos de root con sudo chmod +x [script] y ejecutar.
 
 -Instala RKHunter para detectar rootkits.
 
+-Instala CHKRootkit como segundo antimalware y detector de rootkits.
+
 -Bloquea el puerto de impresión que se suelen dejar abierto algunos linux.
 
 -Securiza el Kernel y activa otras funciones como la detecciñon de IP Spoofing, deshabilita el IP Routing, ignora las peticiones de Broadcast y se asegura de que los paquetes falsificados se registren.
