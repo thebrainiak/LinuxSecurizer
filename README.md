@@ -1,8 +1,11 @@
 # LinuxSecurizer
 Script que realiza cambios básicos en sistemas operativos linux para darle una capa más de seguridad.
+Esta destinado a su uso en sistemas personales, no en servidores, para eso se desarrollará otro script más adelante.
+Solo ha sido testado en Ubuntu/Debian.
+
 Funcionamiento:
 
-Dar permisos de root con sudo chmod +x [script] y ejecutar.
+Dar permisos de root con sudo bash [script] y ejecutar.
 
 ¿Qué corrige este script?
 
