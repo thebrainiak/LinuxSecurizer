@@ -294,8 +294,7 @@ sdintrusos() {
 
              echo -e "\n Generando database de AIDE \n "
 
-             aideinit & > /home/aide.txt
-             rm /home/aide.txt
+             aideinit &
 
 
              echo -e "\n Se ha instalado un sistema de detección de intrusos. \n "
@@ -307,6 +306,10 @@ sdintrusos() {
 }
 
 monitoreo() {
+
+        echo ""
+
+        echo ""
 
         read -p "¿Deseas instalar lnav para monitorear los logs? (S or N): " l
 
