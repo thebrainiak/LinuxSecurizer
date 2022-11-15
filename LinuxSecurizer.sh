@@ -10,7 +10,9 @@ grubprotect() {
       then
             echo -e "\n Introduce la contraseña para encriptarla\n"
             grub-mkpasswd-pbkdf2
+            echo ""
             read -r -p "Copia aqui contraseña encriptada desde grub.pbkdf2.sha512 hasta el final  :" passgrub
+            echo ""
             read -r -p "Nombre de usuario para el Grub: "  usergrub
             #Añadimos la protección en 00_header
 echo "cat << EOF
