@@ -328,7 +328,6 @@ monitoreo() {
 
 despedida() {
 
-              echo -e "\n \Enhorabuena, tu linux ahora está securizado. \n "
               echo -e "\n \e[31m AVISO: Esto no garantiza nada pero complica las cosas a un atacante. \e[31m \n "
 
               echo -e "\n \e[1m \e[34m [*] ES NECESARIO REINICIAR EL PC PARA APLICAR LOS CAMBIOS \e[34m \e[1m \n "
