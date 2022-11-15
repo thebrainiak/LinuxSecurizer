@@ -294,9 +294,8 @@ sdintrusos() {
 
              echo -e "\n Generando database de AIDE \n "
 
-             aideinit &
-
-             time_out=10
+             aideinit & > /home/aide.txt
+             rm /home/aide.txt
 
 
              echo -e "\n Se ha instalado un sistema de detección de intrusos. \n "
