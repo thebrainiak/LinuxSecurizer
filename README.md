@@ -25,7 +25,7 @@ Dar permisos de root con sudo bash [script] y ejecutar.
 
 -Bloquea el puerto de impresión que se suelen dejar abierto algunos linux.
 
--Securiza el Kernel y activa otras funciones como la detecciñon de IP Spoofing, deshabilita el IP Routing, ignora las peticiones de Broadcast y se asegura de que los paquetes falsificados se registren.
+-Securiza el Kernel y activa otras funciones como la detección de IP Spoofing, deshabilita el IP Routing, ignora las peticiones de Broadcast y se asegura de que los paquetes falsificados se registren.
 
 -Desactiva IPV6 para evitar otros tipos de ataque.
 
